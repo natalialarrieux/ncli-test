@@ -1,0 +1,13 @@
+insert into personas (nombre) values ('Nati'), ('Kari'), ('Pia'), ('Vero'), ('Eli'), ('Caro'), ('Orne');
+
+insert into grupos (nombre) values ('Biotec');
+
+insert into persona_grupo (persona, grupo, is_active, color_fondo, color_texto) values (1, 1, 1, '05017A', 'FFFFFF'),(2, 1, 1, '4E017A', 'FFFFFF'),(3, 1, 1, 'BA09B4', 'FFFFFF'),(4, 1, 1, '1ABECF', 'FFFFFF'),(5, 1, 1, '51BA00', 'FFFFFF'),(6, 1, 1, 'FF003C', 'FFFFFF'),(7, 1, 1, 'FF8000', 'FFFFFF');
+
+INSERT INTO eventos (nombre, grupo, creador, selectedDate) values ('Todo por verlas <3', 1, 1, null);
+
+insert into admin_event (persona, evento) values (1, 1);
+
+insert into periodo_window (evento, is_open, start, endt) values (1, 1, '2017-03-08 00:00:00', '2017-03-19 00:00:00');
+
+insert into availability (persona, evento, periodo, start, endt) values (1, 1, 1, '2017-03-10 21:00:00', '2017-03-11 01:00:00');

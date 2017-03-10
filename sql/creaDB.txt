@@ -1,0 +1,27 @@
+CREATE DATABASE "ncli-events"
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Spain.1252'
+    LC_CTYPE = 'Spanish_Spain.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+CREATE SCHEMA "rocky-events"
+    AUTHORIZATION postgres;
+
+Use rocky-events;
+    
+Create table personas(id serial primary key,nombre text);
+
+Create table grupos(id serial primary key,nombre text);
+
+Create table persona_grupo(persona integer,grupo integer,is_active smallint check(is_active in (1, 0)),color_fondo varchar(6),color_texto varchar(6));
+
+Create table eventos(id serial primary key,nombre text,grupo integer,creador integer,selectedDate timestamp);
+                     
+Create table admin_event(persona integer,evento integer);
+                    
+Create table periodo_window(id serial primary key,evento integer,is_open smallint check(is_open in (1, 0)),start timestamp,endt timestamp);
+
+Create table availability(id serial primary key,persona integer,evento integer,periodo integer,start timestamp,endt timestamp);
